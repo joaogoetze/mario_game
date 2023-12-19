@@ -1,0 +1,145 @@
+*
+{
+	margin: 0px;
+	padding: 0px;
+	border: border-box;
+	overflow: hidden;
+}
+
+@font-face 
+{
+	font-family: game;
+	src: url(../fonts/Gameplay.ttf);
+}
+
+audio
+{
+	position: absolute;
+}
+
+p
+{
+	font-family: game;
+	margin-top: 10px;
+	margin-left: 20px;
+	font-size: 40px;
+}
+
+.game_over
+{
+	position: absolute;
+	top: 30%;
+	left: 49%;
+	transform: translate(-50%, -50%);
+	border: none;
+	padding: 5px;
+	font-size: 400%;
+	z-index: 1;
+}
+
+.restart
+{
+	position: absolute;
+	top: 50%;
+	left: 50%;
+	transform: translate(-50%,-50%);
+	border:none;
+	padding: 5px;
+	cursor: pointer;
+	width: 150px;
+	z-index: 1;
+}
+
+.score
+{
+	position: absolute;
+	z-index: 1; /* Deixa o elemento acima dos outros elementos *Quanto menor o número, mais na frente o elemnto fica* */
+}
+
+.game
+{
+	width: 100%;
+	height: 98%;
+	border-bottom: 20px solid green;
+	margin: 0 auto;
+	position: absolute;
+	overflow: hidden; /* Tudo que está fora do quadro fica escondido */
+	background: linear-gradient(#4ab1da,#a1d0e2);
+}
+
+.pipe
+{
+	position: absolute; /* nada interfere "enconsta" no elemento */
+	bottom: 0;
+	width: 80px;
+	animation: pipe-animation 1.5s infinite linear;
+}
+
+@keyframes pipe-animation
+{
+	from
+	{
+		right: -80px;
+	}
+	to
+	{
+		right: 100%;
+	}
+}
+
+.mario
+{
+	width: 150px;
+	position: absolute;
+	bottom:0;
+}
+
+.jump
+{
+	animation: jump 500ms ease-out;
+}
+
+@keyframes jump 
+{
+	/* Define em que altura ficará o elemento a cada porcentagem de tempo da animação */
+	0%
+	{
+		bottom: 0;
+	}
+	40%
+	{
+		bottom: 179px;
+	}
+	50%
+	{
+		bottom: 180px;
+	}
+	60%
+	{
+		bottom: 179px;
+	}
+	100%
+	{
+		bottom: 0;
+	}
+}
+
+.clouds
+{
+	margin-top: 20px;
+	width: 500px;
+	position: absolute;
+	animation: clouds-animation 30s infinite linear;
+}
+
+@keyframes clouds-animation
+{
+	from
+	{
+		right: -500px;
+	}
+	to
+	{
+		right: 100%;
+	}
+}
